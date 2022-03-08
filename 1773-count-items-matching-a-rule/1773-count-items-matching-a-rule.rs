@@ -7,13 +7,6 @@ impl Solution {
             _ => 3,
         };
 
-        let mut result = 0;
-        for i in items {
-            if i[key_index] == rule_value {
-                result += 1;
-            }
-        }
-
-        result
+        items.into_iter().map(|x| (x[key_index] == rule_value) as i32).sum()
     }
 }
